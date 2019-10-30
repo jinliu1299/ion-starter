@@ -21,4 +21,4 @@
             :integration :api-gateway/proxy
             :description "ionized version of items-by-type"}}
  :http-direct {:handler-fn datomic.ion.starter/items-by-type}
- :app-name "<YOUR-APP-HERE>"}
+ :app-name "JIn-dev"}
