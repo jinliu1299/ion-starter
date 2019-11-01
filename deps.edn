@@ -2,8 +2,11 @@
  :deps {com.datomic/ion {:mvn/version "0.9.35"}
         org.clojure/data.json {:mvn/version "0.2.6"}
         org.clojure/clojure {:mvn/version "1.10.0"}
-        com.datomic/client-cloud {:mvn/version "0.8.78"}}
- :mvn/repos {"datomic-cloud" {:url "s3://datomic-releases-1fc2183a/maven/releases"}}
+        com.datomic/client-cloud {:mvn/version "0.8.78"}
+        com.datomic/datomic-free {:mvn/version "0.9.5697"}}
+ :mvn/repos {"datomic-cloud" {:url "s3://datomic-releases-1fc2183a/maven/releases"}
+             "central" {:url "https://repo1.maven.org/maven2/"}
+             "clojars" {:url "https://clojars.org/repo/"}}
  :aliases
  {:dev {:extra-deps {com.datomic/client-cloud {:mvn/version "0.8.78"}
                      com.datomic/ion-dev {:mvn/version "0.9.234"}}}}}
