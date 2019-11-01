@@ -1,10 +1,15 @@
-(ns datomic.ion.sampleEndPoint :require
-  [clojure.data.json :as json]
-  [clojure.edn :as edn]
-  [clojure.java.io :as io]
-  [clojure.pprint :as pp]
-  [datomic.client.api :as d]
-  [datomic.ion.lambda.api-gateway :as apigw])
+(ns datomic.ion.sampleEndPoint
+  (:require
+    [clojure.data.json :as json]
+    [clojure.edn :as edn]
+    [clojure.java.io :as io]
+    [clojure.pprint :as pp]
+    [datomic.client.api :as d]
+    [datomic.ion.lambda.api-gateway :as apigw]))
+
+(defn read-edn
+  [input-stream]
+  (some-> input-stream io/reader (java.io.PushbackReader.) edn/read))
 
 (defn get-by-type
   "HTTP handler that returns self-describing info about items matching type."
