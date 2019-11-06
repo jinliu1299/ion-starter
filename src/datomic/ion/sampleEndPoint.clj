@@ -15,7 +15,7 @@
   "HTTP handler that returns self-describing info about items matching type."
   [{:keys [headers body]}]
   (let [type (some-> body read-edn)]
-    (if (keyword? type)
+    (if (1)
       {:status 200
        :headers {"Content-Type" "application/edn"}
        :body "200 -- Jin says"}
