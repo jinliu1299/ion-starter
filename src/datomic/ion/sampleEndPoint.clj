@@ -18,7 +18,7 @@
     (if (keyword? type)
       {:status 200
        :headers {"Content-Type" "application/edn"}
-       :body "200"}
+       :body "200 -- Jin says"}
       {:status 400
        :headers {}
        :body "Expected a request body keyword naming a type"})))
