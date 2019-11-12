@@ -27,7 +27,7 @@
            {:fn datomic.ion.sampleEndPoint/get-by-type-ionized
             :integration :api-gateway/proxy
             :description "ionized version of get-by-type"}
-           :rounts
+           :routes
            {:fn datomic.ion.service/routes
             :description "HTTP handler that returns routes"}
            :routes-ionized
