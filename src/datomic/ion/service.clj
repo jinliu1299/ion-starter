@@ -24,9 +24,12 @@
   (let [name (get-in request [:params :name] "World")]
     {:status 200 :body (str "Hello " name "!\n")}))
 
-(defroutes routes
-  [[["/rcd-ppr/"
-      ["/rcd-ppr/hello"{:get hello-world}]]]])
+;(defroutes routes
+;  [[["/rcd-ppr/"
+;      ["/rcd-ppr/hello"{:get hello-world}]]]])
+
+(def routes #{[(path "/") :get hello-world]
+              [(path "/hello")  :get hello-world]})
 
 ;(def service {:env                 :prod
 ;              ::http/routes        routes
