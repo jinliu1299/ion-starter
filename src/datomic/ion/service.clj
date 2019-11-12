@@ -25,8 +25,8 @@
     {:status 200 :body (str "Hello " name "!\n")}))
 
 (defroutes routes
-  [[[(path  "/")
-      [(path "/hello")  {:get hello-world}]]]])
+  [[["/rcd-ppr/"
+      ["/rcd-ppr/hello"{:get hello-world}]]]])
 
 ;(def service {:env                 :prod
 ;              ::http/routes        routes
