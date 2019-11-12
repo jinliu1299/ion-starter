@@ -28,10 +28,10 @@
             :integration :api-gateway/proxy
             :description "ionized version of get-by-type"}
            :rounts
-           {:fn datomic.ion/routes
+           {:fn datomic.ion.service/routes
             :description "HTTP handler that returns routes"}
            :routes-ionized
-           {:fn datomic.ion/routes-ionized
+           {:fn datomic.ion.service/routes-ionized
             :integration :api-gateway/proxy
             :description "ionized version of routes"}}
  :http-direct {:handler-fn datomic.ion.starter/items-by-type}
