@@ -17,14 +17,16 @@
             [io.pedestal.http.route.definition :refer [defroutes]]
             [datomic.ion.lambda.api-gateway :as apigw]))
 
+(defn path [path] (str "/rcd-ppr" path))
+
 (defn hello-world
   [request]
   (let [name (get-in request [:params :name] "World")]
     {:status 200 :body (str "Hello " name "!\n")}))
 
 (defroutes routes
-  [[["/"
-      ["/hello" {:get hello-world}]]]])
+  [[[(path  "/")
+      [(path "/hello")  {:get hello-world}]]]])
 
 ;(def service {:env                 :prod
 ;              ::http/routes        routes
