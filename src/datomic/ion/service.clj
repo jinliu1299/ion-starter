@@ -29,7 +29,7 @@
 ;      ["/rcd-ppr/hello"{:get hello-world}]]]])
 
 (def routes #{[(path "/") :get hello-world]
-              [(path "/hello")  :get hello-world]})
+              })
 
 ;(def service {:env                 :prod
 ;              ::http/routes        routes
@@ -40,3 +40,20 @@
 (def routes-ionized
   "Ionization of routes for use with AWS API Gateway lambda proxy integration."
   (apigw/ionize routes))
+
+
+;(def service {::http/routes          routes
+;              ::http/chain-provider  ions/ion-provider
+;              ::http/allowed-origins {:creds           true
+;                                      :allowed-origins (fn [x]
+;                                                         (or (str/includes? x "grantsolutions.gov") (str/includes? x "localhost")))}})
+;
+;(defn handler
+;  [services]
+;  (-> services
+;      http/default-interceptors
+;      http/create-provider))
+;
+;(def app (apigw/ionize (handler service)))
+
+
